@@ -1,0 +1,46 @@
+"use client";
+
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useState } from 'react';
+
+export default function SearchBar({ placeholder = "Search products..." }: {
+    placeholder?: string
+}) {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // Initialize state with the current URL search term (if the page was refreshed)
+    const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || '');
+
+    const handleSearch = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        // If empty, remove the 'q' parameter but keep page 1
+        if (!searchTerm.trim()) {
+            router.push(`?page=1`);
+            return;
+        }
+
+        // Force the URL to Page 1 and append the search query
+        router.push(`?page=1&q=${encodeURIComponent(searchTerm)}`);
+    };
+
+    return (
+        <form onSubmit={handleSearch} className="flex w-full max-w-md">
+            <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder={placeholder}
+                className="flex-1 px-4 py-2 border border-gray-200 rounded-l-md focus:outline-none
+                focus:ring-2 focus:ring-blue-500"
+            />
+            <button
+                type="submit"
+                className="px-4 py-2 bg-blue-600 text-white rounded-r-md hover:bg-blue-700"
+            >
+                Search
+            </button>
+        </form>
+    )
+}
