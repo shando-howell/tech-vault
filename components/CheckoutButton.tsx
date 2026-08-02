@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@clerk/nextjs';
+import { useCart } from "../app/context/CartContext";
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
@@ -13,6 +14,8 @@ export default function CheckoutButton() {
     // Track loading state so users can't click "Buy" twice
     const [isProcessing, setIsProcessing] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+
+    const { clearCart } = useCart();
 
     const handleSimulatedCheckout = async () => {
         if (!userId) return;
@@ -33,7 +36,7 @@ export default function CheckoutButton() {
                 throw new Error(data.error || "Failed to process checkout.");
             }
 
-            // TODO: Clear cart
+            clearCart();
 
             // If successful, the backend cleared the DB cart.
             // Redirect the user to a success page and pass the order number in the URL!
