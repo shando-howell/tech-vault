@@ -87,7 +87,7 @@ export default function Navbar() {
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link href="/products" onClick={closeMenu} className="block hover:bg-emerald-600 px-3 py-2 rounded-md font-medium">Shop</Link>
 
-            <Link href="/" onClick={closeMenu} className="block hover:bg-emerald-600 px-3 py-2 rounded-md font-medium">FAQs</Link>
+            <Link href="/support" onClick={closeMenu} className="block hover:bg-emerald-600 px-3 py-2 rounded-md font-medium">FAQs</Link>
             
             <div className="flex items-center gap-4 px-3">
                 <Show when="signed-out">
