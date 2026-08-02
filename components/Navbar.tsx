@@ -83,7 +83,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu (Absolute positioning ensures it isn't cut off) */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full md:hidden bg-tech-background/70 backdrop-blur-xl border-t border-gray-800 shadow-xl">
+        <div className="absolute top-16 left-0 w-full md:hidden bg-tech-background border-t border-gray-800 shadow-xl">
           <div className="px-4 pt-2 pb-4 space-y-2">
             <Link href="/products" onClick={closeMenu} className="block hover:bg-emerald-600 px-3 py-2 rounded-md font-medium">Shop</Link>
 
