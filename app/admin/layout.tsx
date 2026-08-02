@@ -16,19 +16,19 @@ export default async function AdminLayout({ children }: { children: React.ReactN
     return (
         <div className="flex h-screen w-full overflow-hidden bg-tech-background">
             {/* Admin Sidebar */}
-            <aside className="w-64 flex-shrink-0 bg-black text-white flex flex-col gap-6 p-4">
-                <h2 className="text-xl font-bold tracking-wider">Store Admin</h2>
+            <aside className="w-64 hrink-0 bg-black text-white flex flex-col gap-6 p-4">
+                <h2 className="text-xl font-bold tracking-wider">Admin</h2>
                 <nav className="flex flex-col gap-4 text-sm font-medium">
-                    <Link href="/admin" className="hover:text-gray-300 transition-colors">
+                    <Link href="/admin" className="hover:text-emerald-600 transition-colors">
                         Dashboard
                     </Link>
-                     <Link href="/admin/products" className="hover:text-gray-300 transition-colors">
+                     <Link href="/admin/products" className="hover:text-emerald-600 transition-colors">
                         Manage Products
                     </Link>
-                    <Link href="/admin/tickets" className="hover:text-gray-300 transition-colors">
+                    <Link href="/admin/tickets" className="hover:text-emerald-600 transition-colors">
                         Support Tickets
                     </Link>
-                    <Link href="/" className="hover:text-gray-300 transition-colors mt-8 border-t 
+                    <Link href="/" className="hover:text-emerald-600 transition-colors mt-8 border-t 
                      border-gray-700 pt-4">
                         Back to Store
                     </Link>

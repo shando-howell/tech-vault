@@ -50,7 +50,7 @@ export default function AdminDashboard() {
         <main className="min-h-screen bg-tech-background text-white py-4">
             <div className="max-w-1xl mx-auto">
                 <h1 className="text-3xl font-bold tracking-tight mb-8">
-                    Admin Dashboard
+                    Dashboard
                 </h1>
             </div>
 

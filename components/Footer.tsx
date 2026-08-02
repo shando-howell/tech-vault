@@ -7,7 +7,7 @@ export default function Footer() {
 
                 {/* Branding & System Status */}
                 <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-white tracking-tight">TechVault</h3>
+                    <h3 className="text-xl font-bold text-white tracking-tight">Tech<span className="text-emerald-600">Vault</span></h3>
                     <p className="text-sm leading-relaxed">
                         High-performance e-commerce platform built for scale.
                     </p>
@@ -26,13 +26,13 @@ export default function Footer() {
                     <h4 className="text-white font-semibold mb-4">Architecture</h4>
                     <ul className="space-y-2 text-sm">
                         <li>
-                            <Link href="/products" className="hover:text-blue-400 transition-colors">Product Grid</Link>
+                            <Link href="/products" className="hover:text-emerald-600 transition-colors">Inventory Grid</Link>
                         </li>
                         <li>
-                            <Link href="/admin" className="hover:text-blue-400 transition-colors">Admin Console</Link>
+                            <Link href="/admin" className="hover:text-emerald-600 transition-colors">Admin Dashboard</Link>
                         </li>
                         <li>
-                            <Link href="/support" className="hover:text-blue-400 transition-colors">Support Desk</Link>
+                            <Link href="/support" className="hover:text-emerald-600 transition-colors">Customer Support</Link>
                         </li>
                     </ul>
                 </div>
@@ -51,13 +51,13 @@ export default function Footer() {
                 <div>
                     <h4 className="text-white font-semibold mb-4">Links</h4>
                     <ul className="space-y-2 text-sm">
-                        <li><a href="#" className="hover:text-white transition-colors">Developer Portfolio</a></li>
+                        <li><a href="https://portfolio-seven-mocha-r1vvx66hik.vercel.app/" target="_blank" className="hover:text-emerald-600 transition-colors">Developer Portfolio</a></li>
                     </ul>
                 </div>
             </div>
 
             {/* Bottom Bar */}
-            <div className="px-16 mt-12 pt-8 border-t border-gray-800 flex flex-col text-xs font-mono">
+            <div className="px-4 md:px-16 mt-12 pt-8 border-t border-gray-800 flex flex-col text-xs font-mono">
                 <p>&copy; {new Date().getFullYear()} TechVault. All rights reserved.</p>
                 <p className="mt-4 py-2 md:mt-0 text-gray-200">v1.0.0-beta</p>
             </div>

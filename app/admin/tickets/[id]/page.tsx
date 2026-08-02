@@ -37,7 +37,7 @@ export default async function AdminTicketViewPage({
             {/* Header and Back Button */}
             <div className="flex items-center justify-between mb-8">
                 <div className="flex items-center space-x-4">
-                    <Link href="/admin/tickets" className="text-gray-400 hover:text-gray-100 transition-colors">
+                    <Link href="/admin/tickets" className="text-gray-400 hover:text-emerald-600 transition-colors">
                         &larr; Back to Tickets
                     </Link>
                     <h1 className="text-2xl font-bold">Ticket #{ticket.id}</h1>

@@ -92,7 +92,7 @@ export default function EditProductPage() {
             <div className="flex flex-col gap-4 mb-8">
                 <Link 
                     href="/admin/products"
-                    className="text-gray-200 hover:text-gray-100 transition-colors"
+                    className="text-gray-200 hover:text-emerald-600 transition-colors"
                 >
                     &larr; Back
                 </Link>
@@ -144,8 +144,8 @@ export default function EditProductPage() {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="bg-green-600 text-white font-medium py-3 px-6 rounded-md hover:bg-green-500
-                        transition-colors disabled:bg-green-400"
+                        className="bg-emerald-600 text-white font-medium py-3 px-6 rounded-md hover:bg-emerald-500
+                        transition-colors disabled:bg-gray-400"
                     >
                         {isSubmitting ? 'Saving Changes...' : 'Update'}
                     </button>

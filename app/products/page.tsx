@@ -56,7 +56,7 @@ export default async function ProductsPage({
     <main className="min-h-screen">
       {/* PAGE HEADER */}
       <div className="p-8 font-sans">
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center mb-8">
           <div>
             <h1 className="text-3xl font-bold">Shop Devices</h1>
             <p className="text-lg text-gray-200 mb-10">
@@ -73,7 +73,7 @@ export default async function ProductsPage({
                 key={product.id}
                 href={`/products/${product.id}`}
                 className="block bg-tech-surface border border-tech-border rounded-3xl p-6 
-                hover:border-tech-accent hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transition-all"
+                hover:border-emerald-500 hover:shadow-[0_0_10px_rgba(80,200,120,1)] transition-all"
             >
               <div className="relative aspect-4/5 bg-gray-100 rounded-lg overflow-hidden mb-4 
               border border-gray-200">
@@ -92,13 +92,13 @@ export default async function ProductsPage({
                 )}
               </div>
                 <div className="border p-6 rounded-lg shadow-sm">
-                <p className="text-sm text-gray-500 mb-2">{product.sku}</p>
+                <p className="text-sm text-gray-400 mb-2">{product.sku}</p>
                 <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
                 <div className="flex justify-between items-center mt-4">
                     <span className="text-lg text-green-600 font-medium">
                     ${product.price}
                     </span>
-                    <span className="text-sm bg-black px-2 py-1 rounded">
+                    <span className="text-sm bg-tech-background px-2 py-1 rounded">
                     Stock: {product.stock_quantity}
                     </span>
                 </div>
@@ -118,7 +118,7 @@ export default async function ProductsPage({
               Previous
             </Link>
           ) : (
-            <span className="px-4 py-2 border rounded-md text-gray-300 cursor-not-allowed">
+            <span className="px-4 py-2 border rounded-md text-gray-200 cursor-not-allowed">
               Previous
             </span>
           )}
@@ -132,12 +132,12 @@ export default async function ProductsPage({
           {pagination.currentPage < pagination.totalPages ? (
             <Link
               href={`/products?page=${pagination.currentPage + 1}`}
-              className="px-4 py-2 border rounded-md hover:bg-black"
+              className="px-4 py-2 border rounded-md hover:bg-tech-background"
             >
               Next
             </Link>
           ) : (
-            <span className="px-4 py-2 border rounded-md text-gray-300 cursor-not-allowed">
+            <span className="px-4 py-2 border rounded-md text-gray-200 cursor-not-allowed">
               Next
             </span>
           )}

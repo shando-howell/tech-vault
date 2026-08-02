@@ -1,6 +1,9 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from 'react';
+import { useAuth } from '@clerk/nextjs';
+
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 // Define what a Cart Item looks like (Product + Quantity)
 export interface CartItem {
@@ -24,10 +27,11 @@ interface CartContextType {
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: ReactNode }) {
+    const { userId } = useAuth();
     const [cart, setCart] = useState<CartItem[]>([]);
 
     // Add item or increase quantity if it already exists
-    const addToCart = (product: Omit<CartItem, 'quantity'>) => {
+    const addToCart = async (product: Omit<CartItem, 'quantity'>) => {
         setCart((prevCart) => {
             const existingItem = prevCart.find((item) => item.id === product.id);
             if (existingItem) {
@@ -40,7 +44,33 @@ export function CartProvider({ children }: { children: ReactNode }) {
             }
             return [...prevCart, { ...product, quantity: 1 }];
         });
-    };
+
+        if (!userId) {
+            console.warn("User not logged in. Saved to local state only.");
+            return;
+        }
+
+        try {
+            // Send it to the server
+            const response = await fetch(`${apiUrl}/api/cart`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    userId: userId,
+                    productId: product.id,
+                    quantity: 1
+                }),
+            });
+
+            if (!response.ok) {
+                console.error("Backend failed to save cart item.");
+            }
+        } catch (error) {
+            console.error("Network error adding to cart:", error);
+        }
+    }
 
     // Update exact quantity from the checkout page
     const updateQuantity = (id: number, quantity: number) => {
@@ -57,8 +87,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
     };
 
     // Remove item completely
-    const removeFromCart = (id: number) => {
+    const removeFromCart = async (id: number) => {
         setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+
+        // Tell the database to remove the row
+        if (userId) {
+            try {
+                const response = await fetch(`${apiUrl}/api/cart/${userId}` , {
+                    method: "DELETE",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({
+                        userId: userId
+                    }),
+                });
+
+                if (!response.ok) {
+                    console.log("Server failed to delete item.")
+                }
+            } catch (error) {
+                console.error("Network error removing from cart:", error);
+            }
+        }
     };
 
     const cartCount = cart.reduce((total, item) => total + item.quantity, 0);

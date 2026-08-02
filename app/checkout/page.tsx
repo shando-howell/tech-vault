@@ -3,8 +3,9 @@
 import { useAuth } from '@clerk/nextjs';
 import Image from 'next/image';
 import Link from 'next/link';
+
 import { useCart } from '@/app/context/CartContext'
-import PayPalCheckout from '@/components/PayPalCheckout';
+import CheckoutButton from '@/components/CheckoutButton';
 
 export default function CheckoutPage() {
     const { userId } = useAuth()
@@ -26,8 +27,8 @@ export default function CheckoutPage() {
             <main className="min-h-screen bg-tech-background flex flex-col items-center justify-center px-6">
                 <h1 className="text-3xl font-extrabold text-gray-200 mb-4">Your Cart is Empty</h1>
                 <p className="text-gray-200 mb-8">Looks like you haven&apos;t added anything yet.</p>
-                <Link href="/products" className="bg-black text-white px-8 py-3 rounded-lg font-bold
-                hover:bg-gray-800 transition-colors">
+                <Link href="/products" className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold
+                hover:bg-emerald-400 transition-colors">
                     Start Shopping
                 </Link>
             </main>
@@ -154,7 +155,7 @@ export default function CheckoutPage() {
                                 </span>
                             </div>
 
-                            <PayPalCheckout userId={userId} finalTotal={finalTotal}/>
+                            <CheckoutButton />
                         </div>
                     </div>
                 </div>

@@ -36,17 +36,21 @@ export default async function HomePage() {
       {/* HERO SECTION */}
       <section className="bg-gray-50 border-b border-gray-200 py-30 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight text-tech-background mb-6">
             Next-Gen Ecommerce
           </h1>
-          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-            A digital platform built with Next.js, Node.js and PostgreSQL.
-            Engineered for speed, security and seamless checkouts.
-          </p>
+          <div className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            <p>
+              A digital platform built with Next.js, Node.js and PostgreSQL.
+            </p>
+            <p>
+              Engineered for performance and security.
+            </p>
+          </div>
           <div className="flex gap-4 justify-center">
             <Link
               href="/products"
-              className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-500
+              className="bg-emerald-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-emerald-400
               transition-colors"
             >
               Shop Now
@@ -93,7 +97,7 @@ export default async function HomePage() {
                 {/* Product Details */}
                 <div className="flex justify-between items-start">
                   <div>
-                    <h3 className="font-semibold text-gray-200 group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-semibold text-gray-200 group-hover:text-emerald-600 transition-colors">
                       {product.name}
                     </h3>
                   </div>

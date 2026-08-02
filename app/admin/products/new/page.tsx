@@ -36,8 +36,6 @@ export default function NewProductPage() {
 
             const data = await response.json();
 
-            console.log("DATA OBJECT:", data)
-
             const id = data.product.id;
 
             if (data.success) {
@@ -57,7 +55,7 @@ export default function NewProductPage() {
     return (
         <div className="max-w-2xl mx-auto">
             <div className="flex flex-col gap-4 mb-8">
-                <Link href="/admin/products" className="text-gray-300 hover:text-gray-100 transition-colors">
+                <Link href="/admin/products" className="text-gray-300 hover:text-emerald-600 transition-colors">
                     &larr; Back
                 </Link>
                 <h1 className="text-3xl font-bold">Add New Product</h1>
@@ -66,7 +64,7 @@ export default function NewProductPage() {
             <div>
                 <form 
                     onSubmit={handleSubmit}
-                    className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm space-y-6"
+                    className="bg-white p-6 rounded-lg border border-gray-200 shadow-sm space-y-6 mb-6"
                 >
                     {error && <div className="p-3 bg-red-50 text-red-600 rounded-md text-sm">{error}</div>}
 
@@ -141,8 +139,8 @@ export default function NewProductPage() {
                     <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-green-600 text-white font-medium py-3 rounded-md
-                        hover:bg-green-500  transition-colors disabled:bg-gray-400"
+                        className="w-full bg-emerald-600 text-white font-medium py-3 rounded-md
+                        hover:bg-emerald-500  transition-colors disabled:bg-gray-400"
                     >
                         {isSubmitting ? 'Creating..' : 'Continue to Image Upload'}
                     </button>

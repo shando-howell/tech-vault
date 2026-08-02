@@ -57,7 +57,7 @@ export default async function AdminTicketsPage({
 
     return (
         <main className="max-w-7xl mx-auto">
-            <div className="flex justify-between items-center mb-6">
+            <div className="flex justify-between items-center mb-6 mt-2">
                 <h1 className="text-2xl font-bold">Support Tickets</h1>
             </div>
 
@@ -99,7 +99,7 @@ export default async function AdminTicketsPage({
                                         {new Date(ticket.created_at).toLocaleDateString()}
                                     </td>
                                     <td className='px-6 py-4 whitespace-nowrap text-right font-medium'>
-                                        <Link href={`/admin/tickets/${ticket.id}`} className="text-blue-600 hover:text-blue-900">
+                                        <Link href={`/admin/tickets/${ticket.id}`} className="text-emerald-600 hover:text-emerald-400">
                                             View
                                         </Link>
                                     </td>
@@ -123,7 +123,7 @@ export default async function AdminTicketsPage({
                     <Link
                         href={`/admin/tickets?page=${pagination.currentPage - 1}`}
                         className="px-4 py-2 border border-gray-300 rounded text-sm font-medium
-                        hover:bg-gray-50 transition-colors"
+                        hover:bg-emerald-600 transition-colors"
                     >
                         Previous
                     </Link>
@@ -137,7 +137,7 @@ export default async function AdminTicketsPage({
                 {pagination.currentPage < pagination.totalPages ? (
                     <Link
                         href={`/admin/tickets?page=${pagination.currentPage + 1}`}
-                        className="px-4 py-2 border-gray-200 rounded text-sm font-medium hover:bg-black text-gray-200 transition-colors"
+                        className="px-4 py-2 border-gray-200 rounded text-sm font-medium hover:bg-emerald-600 text-gray-200 transition-colors"
                     >
                         Next
                     </Link>

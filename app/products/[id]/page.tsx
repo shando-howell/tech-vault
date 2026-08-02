@@ -16,9 +16,9 @@ export default async function ProductPage({ params }: { params: Promise<{id: str
 
     if (!data.success || !data.product) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-gray-800">
+            <div className="min-h-screen flex flex-col items-center justify-center bg-tech-background">
                 <h1 className="text-3xl font-bold text-gray-200 mb-4">Product Not Found</h1>
-                <Link href="/products" className="text-blue-600 hover:underline">
+                <Link href="/products" className="text-emerald-600 hover:underline">
                     &larr; Back to all products
                 </Link>
             </div>
@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: { params: Promise<{id: str
         <div className="min-h-screen bg-tech-background text-white p-8">
             {/* Breadcrumb navigation */}
             <nav className="text-sm mb-8 px-20">
-                <Link href="/products" className="text-gray-200 hover:text-blue-600 transition-colors">
+                <Link href="/products" className="text-gray-200 hover:text-emerald-600 transition-colors">
                     Products
                 </Link>
                 <span className="text-gray-400 mx-2">/</span>

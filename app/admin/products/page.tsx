@@ -51,15 +51,15 @@ export default async function AdminProductsPage({
 
     return (
         <div>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-8 mt-2">
                 <h1 className="text-3xl font-bold">Manage Products</h1>
 
                 <SearchBar placeholder="Search by name..." />
 
                 <Link
                     href="/admin/products/new"
-                    className="bg-blue-700 text-white p-2 rounded-lg font-medium 
-                    hover:bg-blue-500 transition-colors"
+                    className="bg-emerald-600 text-white p-2 rounded-lg font-medium 
+                    hover:bg-emerald-500 transition-colors"
                 >
                     + Add New Product
                 </Link>
@@ -99,7 +99,7 @@ export default async function AdminProductsPage({
                                     <td className="p-4 text-right">
                                         <Link
                                             href={`/admin/products/${product.id}/modify`}
-                                            className="bg-blue-600 border border-blue-400 p-2 text-white hover:bg-blue-500 font-medium text-sm transition-colors rounded-lg"
+                                            className="bg-emerald-600 p-3 text-white hover:bg-emerald-400 font-medium text-sm transition-colors rounded-lg"
                                         >
                                             Modify
                                         </Link>
@@ -112,22 +112,22 @@ export default async function AdminProductsPage({
             </div>
 
             {/* The Pagination Controls */}
-            <div className="mt-6 flex justify-between items-center">
+            <div className="mt-4 flex justify-between items-center">
                 <span className="text-sm text-gray-200">
                     Showing page <span className="font-medium">{pagination.currentPage}</span> of <span className="font-medium">{pagination.totalPages}</span> ({pagination.totalItems} total items)
                 </span>
             </div>
 
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 py-4">
                 {pagination.currentPage > 1 ? (
                     <Link
                         href={`/admin/products?page=${pagination.currentPage - 1}`}
-                        className="px-4 py-2 border rounded hover:bg-gray-600"
+                        className="px-4 py-2 border rounded hover:bg-emerald-600"
                     >
                         Previous
                     </Link>
                 ) : (
-                    <span className="px-4 py-2 border rounded text-gray-400 cursor-not-allowed">
+                    <span className="px-4 py-2 border rounded text-gray-200 cursor-not-allowed">
                         Previous
                     </span>
                 )}
@@ -135,12 +135,12 @@ export default async function AdminProductsPage({
                 {pagination.currentPage < pagination.totalPages ? (
                     <Link
                         href={`/admin/products?page=${pagination.currentPage + 1}`}
-                        className="px-4 py-2 border rounded hover:bg-gray-600"
+                        className="px-4 py-2 border rounded hover:bg-emerald-600"
                     >
                         Next
                     </Link>
                 ) : (
-                    <span className="px-4 py-2 border rounded text-gray-300 cursor-not-allowed">
+                    <span className="px-4 py-2 border rounded text-gray-200 cursor-not-allowed">
                         Next
                     </span>
                 )}

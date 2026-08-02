@@ -42,8 +42,8 @@ export default function AddToCartButton({ product }: AddToCartButtonProps) {
                 disabled={isOutOfStock}
                 className={`w-full text-lg font-bold py-4 rounded-xl transition-all ${
                     isOutOfStock
-                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                        : 'bg-black text-white hover:bg-gray-800 active:scle=[0.98]'
+                        ? 'bg-gray-600 text-gray-300 cursor-not-allowed'
+                        : 'bg-emerald-600 text-white hover:bg-emerald-400 active:scale=[0.98]'
                 }`}
             >
                 {isOutOfStock ? 'Out of Stock' : 'Add to Cart'}
