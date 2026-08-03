@@ -17,7 +17,7 @@ export default function Footer() {
                             bg-emerald-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
                         </span>
-                        <span className="text-xs font-mono text-emerald-600 tracking-wider">SYSTEMS OPERATIONAL</span>
+                        <span className="text-xs font-mono text-emerald-600 tracking-wider">SYSTEM ONLINE</span>
                     </div>
                 </div>
 

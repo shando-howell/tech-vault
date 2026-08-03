@@ -134,7 +134,7 @@ export default function SupportPage() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-blue-600 text-white font-medium py-3 rounded-md hover:bg-blue-500 
+                                    className="w-full bg-emerald-600 text-white font-medium py-3 rounded-md hover:bg-emerald-400 
                                     transition-colors disabled:bg-gray-400"
                                 >
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
