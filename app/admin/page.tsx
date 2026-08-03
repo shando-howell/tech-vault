@@ -84,7 +84,7 @@ export default function AdminDashboard() {
                             <tr className="bg-gray-50 text-gray-500 text-sm">
                                 <th className="p-4 font-medium">Order ID</th>
                                 <th className="p-4 font-medium">Date</th>
-                                <th className="p-4 font-medium">Customer</th>
+                                <th className="p-4 font-medium">Customer ID</th>
                                 <th className="p-4 font-medium">Status</th>
                                 <th className="p-4 font-medium text-right">Total</th>
                             </tr>
@@ -98,7 +98,7 @@ export default function AdminDashboard() {
                                     <td className="p-4 text-sm text-gray-900">
                                         {new Date(order.created_at).toLocaleDateString()}
                                     </td>
-                                    <td className="p-4 text-sm text-gray-900">{order.customer_email}</td>
+                                    <td className="p-4 text-sm text-gray-900">{order.user_id}</td>
                                     <td className="p-4 text-sm">
                                         <span className={`px-2 py-1 rounded-full text-xs font-bold ${
                                             order.status === 'COMPLETED' ? 'bg-green-100 text-green-700' : 'bg-yellow-100 text-yellow-700'
