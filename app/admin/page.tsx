@@ -20,7 +20,8 @@ export default function AdminDashboard() {
                 const response = await fetch(`${apiUrl}/api/admin/stats`, {
                     headers: {
                         Authorization: `Bearer ${token}`
-                    }
+                    },
+                    cache: 'no-store'
                 });
                 const data = await response.json();
 
