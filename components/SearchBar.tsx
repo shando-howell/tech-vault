@@ -26,7 +26,7 @@ export default function SearchBar({ placeholder = "Search products..." }: {
     };
 
     return (
-        <form onSubmit={handleSearch} className="flex w-full max-w-md">
+        <form onSubmit={handleSearch} className="flex-row md:flex-col w-full max-w-md">
             <input
                 type="text"
                 value={searchTerm}
