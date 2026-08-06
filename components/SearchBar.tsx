@@ -23,6 +23,7 @@ export default function SearchBar({ placeholder = "Search products..." }: {
 
         // Force the URL to Page 1 and append the search query
         router.push(`?page=1&q=${encodeURIComponent(searchTerm)}`);
+        setSearchTerm("");
     };
 
     return (
