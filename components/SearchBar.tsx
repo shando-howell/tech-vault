@@ -32,12 +32,12 @@ export default function SearchBar({ placeholder = "Search products..." }: {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder={placeholder}
-                className="flex-1 px-4 py-2 border border-gray-200 rounded-l-md focus:outline-none
+                className="flex-1 px-4 py-2 border border-gray-200 rounded-md lg:rounded-l-md focus:outline-none
                 focus:ring-2 focus:ring-emerald-600"
             />
             <button
                 type="submit"
-                className="px-12 md:px-4 py-2 mt-2 md:mt-0 bg-emerald-600 border border-emerald-600 text-white rounded-md md:rounded-r-md hover:bg-emerald-500"
+                className="px-12 lg:px-4 py-2 mt-2 lg:mt-0 bg-emerald-600 border border-emerald-600 text-white rounded-md lg:rounded-r-md hover:bg-emerald-500"
             >
                 Search
             </button>
