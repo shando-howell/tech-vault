@@ -37,7 +37,7 @@ export default function SearchBar({ placeholder = "Search products..." }: {
             />
             <button
                 type="submit"
-                className="px-12 lg:px-4 py-2 mt-2 lg:mt-0 bg-emerald-600 border border-emerald-600 text-white rounded-md lg:rounded-r-md hover:bg-emerald-500"
+                className="px-12 lg:px-4 py-2 mt-2 lg:mt-0 ml-0 lg:ml-3 bg-emerald-600 border border-emerald-600 text-white rounded-md lg:rounded-r-md hover:bg-emerald-500"
             >
                 Search
             </button>
